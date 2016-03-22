@@ -1,12 +1,10 @@
-#!/bin/bash -x
+#!/bin/sh
 echo ""
-echo "Self Extracting Installer"
+echo "Self Extracting Installer for app"
 echo ""
 
-export TMPDIR=`mktemp -d /tmp/selfextract.XXXXXX`
-
+TMPDIR=`mktemp -d /tmp/selfextract.XXXXXX`
 ARCHIVE=`awk '/^#__BEGIN_SELF_EXTRACT_ARCHIVE__#/ {print NR+1;exit 0;}' $0`
-
 tail -n+$ARCHIVE $0 | tar xzv -C $TMPDIR
 
 CDIR=`pwd`

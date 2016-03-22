@@ -1,8 +1,11 @@
-all:
-	@echo "==> Building ..."
-	bash build.sh
+run: build
 	@echo "==> Running ..."
-	bash selfextract_app.bin
+	sh selfextract_app.bin
+build: clean
+	@echo "==> Building ..."
+	sh build.sh
 clean:
 	@echo "==> Cleaning ..."
 	rm -rf *.bin *.tar *.tar.gz
+
+.PHONY: build run clean

@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/sh
 
 tar cf app.tar app/*
 
