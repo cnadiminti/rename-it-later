@@ -1,0 +1,6 @@
+{
+  "name": "Self-extractable-installer-example",
+  "tagline": "Sample Self Extracting Installer",
+  "body": "# self-extractable-installer-example\r\n\r\nThis example shows how to build a self-extractable Installer on Linux.\r\n\r\n```\r\n├── app               <== The app directory containing the original contents\r\n│   └── run_app.sh   <== The entrypoint of our app\r\n├── app_stub.sh       <== The stub responsible for extracting and running the app\r\n├── build.sh          <== Build helper\r\n├── Makefile          <== Makefile for build automation\r\n└── README.md         <== Documentation of this repo\r\n```\r\n\r\n## Build\r\n\r\n`./build.sh` or `make build`\r\n\r\n### What does it do?\r\n\r\n- Creates `app.tar.gz` from the app directory, and\r\n- Creates `selfextract_app.bin` from `app_stub.sh` and `app.tar.gz` in that order\r\n\r\n## Run\r\n\r\n`sh selfextract_app.bin`\r\n\r\n### How does it work?\r\n\r\n- Extracts app from `app.tar.gz` into a TEMP directory, and\r\n- Runs `run_app.sh`\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
